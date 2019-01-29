@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "gulp": "^4.0.0"
+  },
+  "name": "donprolad.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": "index.js",
+  "repository": "https://github.com/donprolad/donprolad.github.io.git",
+  "author": "donprolad",
+  "license": "None"
+}
