@@ -8,5 +8,5 @@
   "main": "index.js",
   "repository": "https://github.com/donprolad/donprolad.github.io.git",
   "author": "donprolad",
-  "license": "None"
+  "license": "MIT"
 }
