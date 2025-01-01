@@ -1,0 +1,108 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+:root {
+    --main-txt-color: rgb(255, 255, 255, 1.0)
+}
+
+.heading-container {
+    display: grid;
+    place-self: center;
+    padding: 1rem;
+}
+
+.sixtyfour-logo {
+    position: relative;
+    font-family: "Sixtyfour", serif;
+    font-size: 7.5rem;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "BLED" 0,
+      "SCAN" 0;
+}
+
+.sixtyfour-logo:hover {
+    opacity: 0.9;
+    text-shadow: 0px -5px #ec2225, 0px 5px #00c2cb, -5px 0px #ec2225, 5px 0px #00c2cb;
+}
+
+.sixtyfour-logo::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.sixtyfour-logo:hover::before {
+    animation: animate-logo 12ms ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes animate-logo {
+    0%, 100%{
+        top: -0.438rem;
+        left: 0;
+        opacity: 1;
+    }
+    20%{
+        top: 0;
+        left: -0.063rem;
+        opacity: 0.7;
+    }
+    40%{
+        top: 0.438rem;
+        left: 0;
+        opacity: 0.2;
+    }
+    60%{
+        top: 0;
+        left: 0.625rem;
+        opacity: 0.3;
+    }
+    80%{
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+    }
+}
+
+.article-container {
+    display: grid;
+    place-self: center;
+    padding: 1rem;
+}
+
+
+.footer-container {
+    display: grid;
+    align-self: center;
+    place-self: center;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.footer-copyright {
+    display: grid;
+    align-self: center;
+    place-self: center;
+    grid-template-columns: 1fr;
+}
+
+.links {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 250px) {
+    .sixtyfour-logo {
+        font-size: 1.25rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}

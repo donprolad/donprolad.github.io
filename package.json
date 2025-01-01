@@ -1,9 +1,12 @@
 {
   "dependencies": {
-    "glob-parent": "^6.0.2",
-    "gulp": "^4.0.0",
-    "kind-of": "6.0.3",
-    "set-value": "^4.1.0"
+    "express": "^4.21.2",
+    "live-server": "^1.2.0",
+    "nodemon": "^3.1.9"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
   },
   "name": "donprolad.github.io",
   "version": "1.0.0",
