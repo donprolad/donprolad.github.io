@@ -6,7 +6,8 @@
   },
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build": "gh-pages -d public"
   },
   "name": "donprolad.github.io",
   "version": "1.0.0",
@@ -14,5 +15,6 @@
   "main": "index.js",
   "repository": "https://github.com/donprolad/donprolad.github.io.git",
   "author": "donprolad",
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://donprolad.github.io/{repository}"
 }
