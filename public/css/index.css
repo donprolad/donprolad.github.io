@@ -135,6 +135,8 @@ footer {
     grid-template-columns: 1fr;
     color: whitesmoke;
     font-size: 0.75rem;
+    position: absolute;
+    bottom: 0;
 }
 
 .links {
