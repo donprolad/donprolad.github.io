@@ -13,14 +13,14 @@ body {
 
 .heading-container {
     display: grid;
-    place-self: center;
+    place-self: left;
     padding: 1rem;
 }
 
 .sixtyfour-logo {
     position: relative;
     font-family: "Sixtyfour", serif;
-    font-size: 7.5rem;
+    font-size: 2.0rem;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -102,10 +102,10 @@ body {
     display: grid;
     place-self: center;
     grid-template-columns: 1fr;
-    padding: 1rem;
+    gap: 1rem;
 }
 
-.footer {
+footer {
     display: grid;
     grid-template-columns: 1fr;
     min-height: 20vh;
@@ -134,6 +134,7 @@ body {
     place-self: center;
     grid-template-columns: 1fr;
     color: whitesmoke;
+    font-size: 0.75rem;
 }
 
 .links {
@@ -143,28 +144,36 @@ body {
 }
 
 @media screen and (max-width: 816px) {
-    .sixtyfour-logo {
+    /* .sixtyfour-logo {
         font-size: 2.50rem;
-    }
+    } */
 }
 
 @media screen and (max-width: 500px) {
-    .sixtyfour-logo {
+    /* .sixtyfour-logo {
         font-size: 1.25rem;
-    }
+    } */
 
     .footer-container {
         grid-template-columns: 1fr;
+    }
+
+    .links {
+        padding: 1rem;
     }
 }
 
 @media screen and (max-width: 250px) {
-    .sixtyfour-logo {
-        font-size: 1.25rem;
-    }
+    /* .sixtyfour-logo {
+       place-self: center;
+    } */
 
     .footer-container {
         grid-template-columns: 1fr;
+    }
+
+    .links {
+        padding: 1rem;
     }
 }
 
