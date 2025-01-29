@@ -3,8 +3,20 @@
     margin: 0px;
 }
 
+:root {
+    --main-txt-color: rgb(255, 255, 255, 1.0)
+}
+
 body {
     background-color: whitesmoke;
+}
+
+#body-2d {
+    visibility: visible;
+}
+
+#body-3d {
+    visibility: hidden;
 }
 
 .scanlines {
@@ -39,10 +51,6 @@ body {
     }
 }
 
-:root {
-    --main-txt-color: rgb(255, 255, 255, 1.0)
-}
-
 .heading-container {
     display: grid;
     place-self: left;
@@ -58,7 +66,7 @@ body {
     font-style: normal;
     font-variation-settings:
       "BLED" 0,
-      "SCAN" 0;
+      "SCAN" 63;
 }
 
 .sixtyfour-logo:hover {
@@ -123,8 +131,6 @@ body {
     padding-right: 10rem;
 }
 
-
-
 .article-container {
     display: grid;
     place-self: center;
@@ -152,7 +158,7 @@ footer {
     display: grid;
     align-self: center;
     place-self: center;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .footer-copyright {
@@ -174,19 +180,21 @@ footer {
     color:blueviolet;
 }
 
+.footer_links:hover {
+    color: #00c2cb;
+}
 
-.paragraph-links {
+.plinks {
     font-family: "IBM Plex Mono", serif;
     font-weight: 700;
     font-style: normal;
     text-decoration: none;
-    transition: color 2s;
+    transition: "text-decoration" 2s;
 }
 
-.paragraph-links:hover {
+.plinks:hover {
     text-decoration: underline;
 }
-
 
 .links {
     color: whitesmoke;
@@ -195,11 +203,15 @@ footer {
     font-style: normal;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color 2s;
+    transition: color 2s, text-decoration 4s;
 }
 
 .links:hover {
-    color: #00c2cb;
+    text-decoration: underline;
+}
+
+.vr-link {
+    padding-left: 2rem;
 }
 
 @media screen and (max-width: 816px) {

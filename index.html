@@ -9,23 +9,125 @@
     <title>GMTLABS</title>
   </head>
   <body>
-    <div class="heading-container">
-      <h1 class="sixtyfour-logo" data-text="GMTLABS">GMTLABS</h1>
-      <div class="scanlines"></div>
-    </div>
-    <main>
+    <div id="body-2d">
+      <div class="heading-container">
+        <h1 class="sixtyfour-logo" data-text="GMTLABS">GMTLABS</h1>
+        <div class="scanlines"></div>
+      </div>
+      <main>
         <article class="article-container">
-          <h3 class="slogan">We provide software,hardware products and services for <span><a href="#" class="paragraph-links gaming-span">gaming</a></span> and <span><a href="#" class="paragraph-links music-span">music</a></span>, that we hope will be delightful for you to enjoy and work with. Watch this space for more updates...</h3>
+          <h3 class="slogan">We provide software,hardware products and services for <span class="gaming-span">gaming</span> and<span class="music-span"> music</span>, that we hope will be delightful for you to enjoy and work with. Watch this space for more updates...</h3>
         </article>
-    </main>
+      </main>
+    </div>
+    <div id="body-3d">
+      <a-scene background="color: whitesmoke">
+        <a-assets>
+          <script id="link" type="text/html">
+            <a-entity class="link"
+              geometry="primitive: plane; height: 1 width: 1"
+              material="shader: flat; src: #cubes-thumb"
+              sound="on: click; src: #click-sound">
+            </a-entity>
+          </script>
+          <img id="wall-texture" src="./img/assets/red_brick_diff_4k.jpg">
+          <img id="the-sky" src="./img/assets/clear-sunny-sky.jpg">
+        </a-assets>
+        <a-sky material="
+          src: #the-sky;
+        " rotation="0 64 0"></a-sky>
+        <!-- <a-entity
+        id="mouseCursor"
+        cursor="rayOrigin: mouse"
+        raycaster="objects: #main-heading"
+      ></a-entity> -->
+        <a-entity
+          id="main-heading" 
+          text="
+            value: GMTLABS; 
+            color: #000000; 
+            shader: msdf; 
+            font: https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/creepster/Creepster-Regular.json; 
+            width: 50; 
+            height: 7;
+            size: 1.5;"
+          position="0 2.5 -10"
+          event-set__enter="_event: mouseenter; _target: #slogan; opacity: 1"
+          event-set__leave="_event: mouseleave; _target: #slogan; opacity: 0">
+          <a-entity
+            id="slogan" 
+            text="value:We provide software,hardware products and services for gaming and music, that we hope will be delightful for you to enjoy and work with. Watch this space for more updates...; color:#000000;  width: 20; height: 7;"
+            visible="true"
+            position="2.5 0 0"
+          >
+          </a-entity>
+        </a-entity>
+          <a-entity fort position="0 0 10.0">
+            <a-entity wall 
+              position="0 0.2 -2.5"
+              width="5" 
+              material="
+                color: #FFFFFF;
+                src: #wall-texture;
+                normal-map: #wall-texture;
+                normal-texture-repeat:0.5 0.5;
+                repeat:0.5 0.5;
+                normal-scale:0.5 0.5;
+              ">
+
+            </a-entity>
+            <a-entity wall 
+            position="0 0.2 -9.0" 
+            width="5" 
+            material="
+            color: #FFFFFF;
+            src: #wall-texture;
+            normal-map: #wall-texture;
+            normal-texture-repeat:0.5 0.5;
+            repeat:0.5 0.5;
+            normal-scale:0.5 0.5;
+          "></a-entity>
+            <a-entity wall position="5.50 0.2 -5.75" rotation="0 90 0" material="
+            color: #FFFFFF;
+            src: #wall-texture;
+            normal-map: #wall-texture;
+            normal-texture-repeat:0.5 0.5;
+            repeat:0.5 0.5;
+            normal-scale:0.5 0.5;
+          "></a-entity>
+            <a-entity wall position="-5.50 0.2 -5.75" rotation="0 90 0" material="
+            color: #FFFFFF;
+            src: #wall-texture;
+            normal-map: #wall-texture;
+            normal-texture-repeat:0.5 0.5;
+            repeat:0.5 0.5;
+            normal-scale:0.5 0.5;
+          "></a-entity>
+          </a-entity>
+        <a-plane color="#00AA00" scale="10000 10000 1" rotation="-90 0 0">
+
+        </a-plane>
+        <a-entity position="0 1 5">
+          <a-camera user-height="1.6" active="true">
+            <a-cursor cursor="rayOrigin: mouse" user></a-cursor>
+          </a-camera>
+        </a-entity>
+        <!-- <a-box position="0 0 0" color="#689f38" width="7" height="2.5" depth="0.5"></a-box> -->
+        <!-- <a-cylinder color="#616161" height="2" radius="2" segments-radial="6" open-ended="true" side="double"></a-cylinder> -->
+    </div>
   </body>
   <footer>
     <div class="footer-head"></div>
     <div class="footer-container">
-      <a href="#" class="links">About</a>
-      <a href="#" class="links">Gaming</a>
-      <a href="#" class="links">Music</a>
-      <a href="#" class="links">Contact</a>
+      <a href="#" class="links footer_links">About</a>
+      <a href="#" class="links footer_links">Gaming</a>
+      <a href="#" class="links footer_links">Music</a>
+      <a href="#" class="links footer_links">Contact</a>
+      <a href="#" title="Web VR is available">
+        <div class="vr-link">
+          <img src="./img/icons/virtual-reality-vr.svg">
+        </div>
+      </a>
     </div>
     <div class="footer-copyright">
       <span id="copyright"></span>
@@ -40,6 +142,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" type="text/css" href="./css/index.css">
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-template-component@3.x.x/dist/aframe-template-component.min.js"></script>
   <!-- <script src="https://unpkg.com/htmx.org@2.0.3/dist/htmx.js" integrity="sha384-BBDmZzVt6vjz5YbQqZPtFZW82o8QotoM7RUp5xOxV3nSJ8u2pSdtzFAbGKzTlKtg" crossorigin="anonymous"></script> -->
-  <script src="./js/index.js"></script>
+  <script type="module" src="./js/index.js"></script>
 </html>
