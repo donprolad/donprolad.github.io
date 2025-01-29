@@ -11,3 +11,7 @@ server.use(express.json())
 server.listen(port, () => {
     console.log(`Server is running on ${port}`)
 })
+
+process.on('unhandledRejection', (error) => {
+    console.error('unhandledRejection', error.message)
+})
